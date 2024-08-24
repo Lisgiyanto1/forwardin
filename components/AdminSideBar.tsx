@@ -108,7 +108,8 @@ export default function AdminSidebar({ children }: AdminSidebarProps) {
                         <ul className={`absolute right-0 mt-10 mr-5 w-48 bg-white shadow-lg rounded-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
                             <li>
                                 <button
-                                    onClick={() => signOut({ redirect: false })}
+                                   onClick={() => signOut({ redirect: true, callbackUrl: '/signin' })}
+
                                     className={`block p-2 mx-2 font-semibold text-left rounded-lg w-full hover:bg-gray-200 ${isDarkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-100 text-gray-900'}`}
                                 >
                                     Logout
