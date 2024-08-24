@@ -1,10 +1,10 @@
 import RootLayout from "@/components/layout";
 import "@/styles/globals.css";
+import "flowbite-react";
 import type { AppProps } from "next/app";
-import { SessionProvider } from "next-auth/react"; // Import SessionProvider
+import { SessionProvider } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Placeholder from "@/components/Placeholder";
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const router = useRouter();
@@ -27,13 +27,15 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
   }, [router]);
 
   return (
+    <>
 
-    <SessionProvider session={session}>
-      {loading ? <Placeholder /> :
+      <SessionProvider session={session}>
+
         <RootLayout>
-
           <Component {...pageProps} />
-        </RootLayout>}
-    </SessionProvider>
+        </RootLayout>
+      </SessionProvider>
+    </>
+
   );
 }

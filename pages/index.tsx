@@ -1,11 +1,40 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import Placeholder from '@/components/Placeholder'; // Reuse the placeholder component from your dashboard
 import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Dashboard from '@/pages/dashboard/home'; // Import the Dashboard component
+import GetStarted from "@/components/widget/GetStarted";
 
 export default function Home() {
+  // const { data: session, status } = useSession();
+  // const router = useRouter();
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   // Simulating loading time or delay
+  //   if (status === 'loading') {
+  //     const timeout = navigator.onLine ? 3000 : 6000;
+  //     setTimeout(() => {
+  //       setLoading(false);
+  //     }, timeout);
+  //   } else {
+  //     setLoading(false);
+  //   }
+  // }, [status]);
+
+  // // Render a placeholder if the session is still being loaded
+  // if (loading) {
+  //   return <Placeholder />;
+  // }
+
+  // // If the user is logged in, display the dashboard content
+  // if (session) {
+  //   return <Dashboard />;
+  // }
+
+  // If the user is not logged in, display the public home page content
   return (
     <>
       <Head>
@@ -28,24 +57,9 @@ export default function Home() {
         <meta property="og:url" content="https://your-domain.com" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Welcome to my Next.js App! Explore and learn more about web
-            development.
-          </p>
-        </div>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
+      <main className="h-screen w-screen">
+        <GetStarted/>
       </main>
     </>
   );

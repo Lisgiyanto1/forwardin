@@ -36,56 +36,52 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="flex bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl w-full">
-        <WelcomeText />
 
-        <div className="w-1/2 p-8 flex flex-col justify-center">
-          <h2 className="text-2xl font-semibold text-center mb-6">
-            {currentPage === 'signUp' && 'Sign Up'}
-            {currentPage === 'forgotPassword' && 'Forgot Password'}
-            {currentPage === 'signIn' && 'Sign In'}
-          </h2>
+  <div className="flex flex-row lg:bg-gray-100 h-auto ">
+    <div className="hidden pl-36 pb-10  justify-center lg:flex w-full ">
+      <WelcomeText />
+    </div>
+    <div className=" flex flex-col w-full justify-center ">
+      {currentPage === 'signIn' && <SignIn />}
+      {currentPage === 'signUp' && <SignUp isInSignInPage={true} />}
+      {currentPage === 'forgotPassword' && <ForgotPassword />}
 
-          {currentPage === 'signIn' && <SignIn />}
-          {currentPage === 'signUp' && <SignUp isInSignInPage={true} />}
-          {currentPage === 'forgotPassword' && <ForgotPassword />}
-
-          <div className="mt-4 text-center">
-            {currentPage === 'signIn' && (
-              <>
-                <p>
-                  Don`t have an account?{' '}
-                  <button onClick={handleSwitchToSignUp} className="text-blue-500 hover:underline">
-                    Sign Up
-                  </button>
-                </p>
-                <p>
-                  <button onClick={handleForgotPassword} className="text-blue-500 hover:underline">
-                    Forgot Password?
-                  </button>
-                </p>
-              </>
-            )}
-            {currentPage === 'signUp' && (
-              <p>
-                Already have an account?{' '}
-                <button onClick={handleSwitchToSignIn} className="text-blue-500 hover:underline">
-                  Sign In
-                </button>
-              </p>
-            )}
-            {currentPage === 'forgotPassword' && (
-              <p>
-                Remembered your password?{' '}
-                <button onClick={handleSwitchToSignIn} className="text-blue-500 hover:underline">
-                  Sign In
-                </button>
-              </p>
-            )}
-          </div>
-        </div>
+      <div className="mt-4 text-center">
+        {currentPage === 'signIn' && (
+          <>
+            <p>
+              Butuh Buat Akun?{' '}
+              <button onClick={handleSwitchToSignUp} className="text-blue-500 hover:underline">
+                Daftar di sini
+              </button>
+            </p>
+            <p>
+              <button onClick={handleForgotPassword} className="text-blue-500 hover:underline">
+                Lupa Password?
+              </button>
+            </p>
+          </>
+        )}
+        {currentPage === 'signUp' && (
+          <p>
+            Sudah punya akun?{' '}
+            <button onClick={handleSwitchToSignIn} className="text-blue-500 hover:underline">
+              Masuk di sini
+            </button>
+          </p>
+        )}
+        {currentPage === 'forgotPassword' && (
+          <p>
+            Ingin Password?{' '}
+            <button onClick={handleSwitchToSignIn} className="text-blue-500 hover:underline">
+              Masuk di sini
+            </button>
+          </p>
+        )}
       </div>
     </div>
+  </div>
+
+
   );
 }
