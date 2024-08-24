@@ -21,5 +21,7 @@ Sebelum mulai, pastikan Anda memiliki perangkat lunak berikut terinstal:
 3. **Setelah build selesai, jalankan development server dengan:**
    npm run dev
 
+**Project Masih dalam proses penyempurnaan dalam waktu 24 jam kedepan.**
+
 *Akses Website yang Telah Dideploy*
 Untuk memudahkan Anda mengakses website ini, saya sudah deploy ke Vercel. Anda dapat mengaksesnya melalui link berikut: [Website di Vercel](https://forwardin-n4agf6841-lisgiyanto-sofiyans-projects.vercel.app/admin/home)
