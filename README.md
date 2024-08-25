@@ -27,4 +27,4 @@ Sebelum mulai, pastikan Anda memiliki perangkat lunak berikut terinstal:
 ###Silahkan ikuti website yang sudah ter-deploy.
 
 *Akses Website yang Telah Dideploy*
-Untuk memudahkan Anda mengakses website ini, saya sudah deploy ke Vercel. Anda dapat mengaksesnya melalui link berikut: [Website di Vercel](https://forwardin-n4agf6841-lisgiyanto-sofiyans-projects.vercel.app/admin/home)
+Untuk memudahkan Anda mengakses website ini, saya sudah deploy ke Vercel. Anda dapat mengaksesnya melalui link berikut: [Website di Vercel]([https](https://forwardin-pynxrtaza-lisgiyanto-sofiyans-projects.vercel.app/))
