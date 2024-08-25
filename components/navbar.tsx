@@ -19,8 +19,8 @@ export default function CustomNavbar() {
     const [showLogoutModal, setShowLogoutModal] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [showSignInDropdown, setShowSignInDropdown] = useState(false);
-    const [isScrollingUp, setIsScrollingUp] = useState(true); // Track scroll direction
-    const [lastScrollY, setLastScrollY] = useState(0); // Last scroll position
+    const [isScrollingUp, setIsScrollingUp] = useState(true); 
+    const [lastScrollY, setLastScrollY] = useState(0); 
     const [featuresDropdownOpen, setFeaturesDropdownOpen] = useState(false);
     const [activeLink, setActiveLink] = useState<string>("");
 
@@ -83,7 +83,7 @@ export default function CustomNavbar() {
                 <Navbar
                     fluid={true}
                     rounded={true}
-                    className={`fixed left-1/4 top-6 bg-white w-2/5 h-16 rounded-xl shadow-md flex justify-between items-center  z-50 transition-transform  ${isScrollingUp ? 'show-navbar' : 'hide-navbar'}`}
+                    className={`fixed lg:left-40 md:left-32 left-20 top-6 bg-white w-2/5 h-16 rounded-xl shadow-md flex justify-between items-center  z-50 transition-transform  ${isScrollingUp ? 'show-navbar' : 'hide-navbar'}`}
                 >
                     <div className="flex items-center md:w-3/4">
                         <Navbar.Brand href="/">

@@ -1,4 +1,3 @@
-# Project Next.js
 
 ## Prerequisites
 

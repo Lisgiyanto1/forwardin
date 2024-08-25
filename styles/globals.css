@@ -363,9 +363,50 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
 }
+.left-48 {
+    left: 12rem /* 192px */;
+}
+.bottom-20 {
+    bottom: 5rem /* 80px */;
+}
+
+@media (min-width: 768px) {
+    .md\:left-32 {
+        left: 8rem /* 128px */;
+    }
+}
+@media (min-width: 1024px) {
+    .lg\:left-40 {
+        left: 10rem /* 160px */;
+    }
+}
+.left-56 {
+    left: 14rem /* 224px */;
+}
+.left-32 {
+    left: 8rem /* 128px */;
+}
+.mb-10 {
+    margin-bottom: 2.5rem /* 40px */;
+}
+.left-40 {
+    left: 10rem /* 160px */;
+}
+@media (min-width: 768px) {
+    .md\:pl-20 {
+        padding-left: 5rem /* 80px */;
+    }
+}
+.mb-20 {
+    margin-bottom: 5rem /* 80px */;
+}
 
 .duration-300 {
     transition-duration: 300ms;
+}
+
+.mt-40 {
+    margin-top: 10rem /* 160px */;
 }
 .pl-40 {
     padding-left: 10rem /* 160px */;

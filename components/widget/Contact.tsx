@@ -7,8 +7,8 @@ import Image from "next/image";
 export default function Contact() {
     return (
 
-        <>
-            <div className="h-screen w-auto flex items-center justify-center">
+        <div className="flex flex-col h-auto mt-20">
+            <div className="h-auto w-auto flex items-center justify-center">
                 <div className="w-full pt-20">
 
                     <div className="flex flex-col md:flex-row mx-20 ">
@@ -69,7 +69,7 @@ export default function Contact() {
 
 
             </div>
-            <div className="flex flex-row items-center lg:mb-20 mb-52 mt-20 w-full justify-center space-x-3">
+            <div className="flex flex-row items-center mb-10 lg:mb-20 mt-40  w-full justify-center space-x-3">
                 <p className="text-slate-100 font-light">Powered By</p>
                 <span>
                     <Image
@@ -81,6 +81,6 @@ export default function Contact() {
                     />
                 </span>
             </div>
-        </>
+        </div>
     );
 }
