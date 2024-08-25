@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Broadcast() {
     return (
-        <div className="h-screen w-screen bg-gray-100 bg-cover bg-center overflow-hidden" >
+        <div className="h-screen z-0 w-screen bg-gradient-to-b from-transparent to bg-gray-100 bg-cover bg-center overflow-hidden" >
             <div className="flex items-center justify-center h-full">
                 <div className="w-full lg:ml-44  lg:w-10/12  flex flex-col lg:flex-row justify-between items-center lg:items-start">
 

@@ -18,7 +18,7 @@ export default function Opportunity() {
     };
 
     return (
-        <div className="h-screen w-screen bg-gray-100 bg-cover bg-center overflow-hidden">
+        <div className="h-auto w-screen bg-gray-100 bg-cover bg-center overflow-hidden">
             <div className="flex items-center justify-center flex-col h-full">
                 <div className="lg:w-1/2 ">
                     <h1 className="font-extrabold text-blue-500 text-3xl  text-center">{`"One Step Closer to More Effective and Connected Communication!"`}</h1>

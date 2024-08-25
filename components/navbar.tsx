@@ -19,8 +19,8 @@ export default function CustomNavbar() {
     const [showLogoutModal, setShowLogoutModal] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [showSignInDropdown, setShowSignInDropdown] = useState(false);
-    const [isScrollingUp, setIsScrollingUp] = useState(true); 
-    const [lastScrollY, setLastScrollY] = useState(0); 
+    const [isScrollingUp, setIsScrollingUp] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const [featuresDropdownOpen, setFeaturesDropdownOpen] = useState(false);
     const [activeLink, setActiveLink] = useState<string>("");
 
@@ -64,11 +64,7 @@ export default function CustomNavbar() {
             console.error('Error logging out:', error);
         }
     };
-    const modalLogout=()=>{
-        
-        setFeaturesDropdownOpen(false);
-        setShowLogoutModal(true);
-    }
+
 
     const shouldShowMinimalNavbar = isSignInPage || isSignUpPage || isInForgotPage;
     const isAdmin = session?.user?.role === 'admin';
@@ -76,14 +72,14 @@ export default function CustomNavbar() {
     if (isAdmin) return null;
 
     return (
-        <>
+        <div className='flex flex-col justify-center items-center'>
             {shouldShowMinimalNavbar ? (
                 <NavbarMinimal />
             ) : (
                 <Navbar
                     fluid={true}
                     rounded={true}
-                    className={`fixed lg:left-40 md:left-32 left-20 top-6 bg-white w-2/5 h-16 rounded-xl shadow-md flex justify-between items-center  z-50 transition-transform  ${isScrollingUp ? 'show-navbar' : 'hide-navbar'}`}
+                    className={`fixed   top-6 bg-white w-2/5 h-16 rounded-xl shadow-md flex justify-between items-center  z-50 transition-transform  ${isScrollingUp ? 'show-navbar' : 'hide-navbar'}`}
                 >
                     <div className="flex items-center md:w-3/4">
                         <Navbar.Brand href="/">
@@ -202,10 +198,10 @@ export default function CustomNavbar() {
                                 Logout
                             </Button>
                         )}
-                    </div>                    
+                    </div>
                     {menuOpen && (
                         <div
-                            className="flex w-72 absolute flex-col items-center space-y-4 md:hidden bg-gradient-to-b from-blue-50 to-white shadow-lg transition-all duration-300 ease-in-out py-4 rounded-lg"
+                            className="flex w-auto absolute right-1.5 flex-col items-center space-y-4 lg:hidden bg-gradient-to-b from-blue-50 to-white shadow-lg transition-all duration-300 ease-in-out py-4 rounded-lg"
                             style={{ top: '64px' }}
                         >
                             <div className="relative z-10">
@@ -248,7 +244,7 @@ export default function CustomNavbar() {
                             {status !== 'authenticated' && (
                                 <div className="relative">
                                     <Button
-                                        className="bg-blue-500 hover:bg-blue-800 text-white px-6 py-2 w-64 rounded-lg"
+                                        className="bg-blue-600 hover:bg-blue-800 text-white px-5 py-2 w-60 rounded-lg"
                                         onClick={() => setShowSignInDropdown(!showSignInDropdown)}
                                     >
                                         Sign In
@@ -301,6 +297,6 @@ export default function CustomNavbar() {
                     onCancel={() => setShowLogoutModal(false)}
                 />
             )}
-        </>
+        </div>
     );
 }

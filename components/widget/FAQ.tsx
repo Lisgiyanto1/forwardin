@@ -4,7 +4,7 @@ import { SearchIcon } from "lucide-react";
 
 export default function FAQ() {
     return (
-        <div className="h-screen w-screen flex items-center justify-center  p-4">
+        <div className="h-auto w-screen flex items-center justify-center  p-4">
             <div className="w-full max-w-2xl">
 
                 <h2 className="text-white text-center text-2xl font-bold mb-6 lg:mt-0 mt-20">

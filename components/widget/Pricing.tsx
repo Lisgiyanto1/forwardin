@@ -4,7 +4,7 @@ import { pricingPlans } from "@/dummy/Pricing";
 
 export default function Pricing() {
     return (
-        <div className="w-screen py-10 pb-10 lg:mx-0 bg-gray-100 bg-cover bg-center overflow-hidden">
+        <div className="w-screen h-auto py-10 pb-10 lg:mx-0 bg-gray-100 bg-cover bg-center overflow-hidden">
             <div className="flex items-center justify-center w-auto flex-col h-auto">
                 <div className="lg:w-1/2 mb-5 text-center">
                     <h1 className="font-bold lg:font-extrabold text-gray-950 text-xl lg:text-3xl">

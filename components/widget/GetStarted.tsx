@@ -28,7 +28,7 @@ export default function GetStarted() {
 
   return (
     <div className="w-full h-screen  bg-white rounded shadow-md flex flex-col md:flex-row">
-      <div className="hidden md:block w-auto h-full rounded">
+      <div className="hidden lg:block w-auto h-full rounded">
         <Aside onSelectPage={handleScroll} />
       </div>
       <div className="w-full h-full flex-1 overflow-auto">

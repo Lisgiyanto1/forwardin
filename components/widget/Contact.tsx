@@ -77,7 +77,7 @@ export default function Contact() {
                         alt="dashboard"
                         width={200}
                         height={200}
-                        className="object-cover "
+                        className="object-cover w-36 lg:w-0"
                     />
                 </span>
             </div>

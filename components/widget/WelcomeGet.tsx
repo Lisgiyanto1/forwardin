@@ -10,8 +10,9 @@ export default function WelcomeGet() {
       router.push('/signup')
   }
   return (
-    <div className="h-auto w-screen bg-gray-100 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url('/background.png')`, margin: '0', padding: '0' }}>
-      <div className="flex items-center justify-center h-full">
+    <div>
+    <div className="h-auto w-screen bg-gray-100 bg-cover bg-center  overflow-hidden" style={{ backgroundImage: `url('/background.png')`, margin: '0', padding: '0' }}>
+      <div className="flex items-center justify-center h-auto pb-20">
         <div className="w-full lg:ml-44 pt-44 lg:pt-0  lg:w-10/12  flex flex-col lg:flex-row justify-between items-center lg:items-start">
 
       
@@ -42,7 +43,7 @@ export default function WelcomeGet() {
                 >
                   Daftar Sekarang
                 </Button>
-                <div className="bg-gray-600 h-full ml-4 py-3 px-4 rounded-lg rounded-tl-none rounded-bl-none border-l-2 border-white">
+                <div className="bg-gray-600 h-full ml-4 lg:py-3 md:py-2.5 py-2.5 px-4 rounded-lg rounded-tl-none rounded-bl-none border-l-2 border-white">
                   <ArrowRightIcon className="text-white" />
                 </div>
               </div>
@@ -52,5 +53,7 @@ export default function WelcomeGet() {
       </div>
 
     </div>
+    </div>
+    
   );
 }
