@@ -26,5 +26,5 @@ Sebelum mulai, pastikan Anda memiliki perangkat lunak berikut terinstal:
 
 ### Silahkan ikuti website yang sudah ter-deploy.
 
-*Akses Website yang Telah Dideploy*
-Untuk memudahkan Anda mengakses website ini, saya sudah deploy ke Vercel. Anda dapat mengaksesnya melalui link berikut: [Website di Vercel](https://forwardin-jo1bqwo0j-lisgiyanto-sofiyans-projects.vercel.app/)
+[Akses Website yang Telah Dideploy](https://forwardin-1b2jer5bx-lisgiyanto-sofiyans-projects.vercel.app/)
+<button style="background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 5px; border: none;">Visit Website</button>
