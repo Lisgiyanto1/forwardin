@@ -22,19 +22,24 @@ const AdminHome = () => {
             setGreeting('Good evening');
         }
 
-        // Set current date and time
-        const now = new Date();
-        const options: Intl.DateTimeFormatOptions = {
-            weekday: 'long',
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric',
-            hour12: true,
-        };
-        setCurrentDate(now.toLocaleDateString('en-US', options));
+        // Update the date and time every second
+        const intervalId = setInterval(() => {
+            const now = new Date();
+            const options: Intl.DateTimeFormatOptions = {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true,
+            };
+            setCurrentDate(now.toLocaleDateString('en-US', options));
+        }, 1000);
+
+        // Cleanup the interval on component unmount
+        return () => clearInterval(intervalId);
     }, []);
 
     if (status === 'loading') {
@@ -55,23 +60,19 @@ const AdminHome = () => {
                 </p>
                 <div className="flex items-center mt-5 mb-5 justify-end text-gray-700 space-x-2">
                     <div className="flex flex-col items-end">
-                        <p className='text-xs font-light mr-2'>Tanggal hari ini</p>
+                        <p className='text-xs font-medium mr-2'>Tanggal hari ini</p>
                         <span className='text-sm font-semibold text-gray-500 pr-3'>{currentDate}</span>
                     </div>
                     <Calendar className="w-7 h-7 text-gray-500" />
                 </div>
 
-                <div className='w-auto  flex flex-row justify-between i '>
+                <div className='w-auto h-auto flex flex-row justify-between'>
                     <Paket />
-                   <div className='pl-10'>
-                   <PesanTrack/>
-                   </div>
-                    
+                    <div className='pl-10'>
+                        <PesanTrack />
+                    </div>
                 </div>
-
-
             </div>
-
         </AdminSidebar>
     );
 };

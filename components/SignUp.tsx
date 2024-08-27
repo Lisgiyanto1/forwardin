@@ -190,10 +190,10 @@ export default function SignUp({ isInSignInPage = false }: SignUpProps) {
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-500 focus:outline-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-500 focus:outline-none font-bold"
             >
-                <option value="user" className="bg-white rounded-lg focus:outline-none hover:bg-gray-100">User</option>
-                <option value="admin" className="bg-white rounded-lg focus:outline-none hover:bg-gray-100">Admin</option>
+                <option value="user" className="bg-white rounded-lg focus:outline-none hover:bg-gray-100 font-semibold">User</option>
+                <option value="admin" className="bg-white rounded-lg focus:outline-none hover:bg-gray-100 font-semibold">Admin</option>
             </select>
             <button
                 type="submit"
@@ -203,7 +203,7 @@ export default function SignUp({ isInSignInPage = false }: SignUpProps) {
                 Sign Up
             </button>
             {showAlert && (
-                <div className="fixed top-4 right-4 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg shadow-lg flex items-center space-x-2">
+                <div className="fixed z-10 top-4 right-4 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg shadow-lg flex items-center space-x-2">
                     <CheckCircle size={24} className="text-green-500" />
                     <span>Sign up successful!</span>
                 </div>

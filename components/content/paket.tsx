@@ -2,10 +2,10 @@ import React from 'react';
 
 const Paket: React.FC = () => {
     return (
-        <div className=" mx-auto  bg-white shadow-lg rounded-lg p-6">
+        <div className=" mx-auto  h-64   bg-white shadow-lg rounded-lg p-8 ">
             <div className="flex justify-between items-center">
                 <div className='flex  flex-row justify-center gap-2 items-top'>
-                    <span className="text-gray-800 font-medium w-20">Paket saat ini</span>
+                    <span className="text-gray-800 font-medium w-16">Paket saat ini</span>
                     <h2 className="text-2xl font-extrabold "> Starter</h2>
                     <span className='bg-gray-900  my-1 px-3 rounded-2xl text-white font-light text-center h-6 flex justify-center items-center'>free</span>
 
@@ -17,20 +17,28 @@ const Paket: React.FC = () => {
             </div>
             <div className='flex flex-row gap-8 justify-between'>
                 <div className="mt-6 w-80">
-                    <div className="flex justify-between">
-                        <span className='font-medium'>Devices</span>
-                        <span className="text-gray-500">8 dari 10</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
-                        <div className="bg-red-600 h-2.5 rounded-full" style={{ width: '80%' }}></div>
+                    <div className='flex flex-row gap-8'>
+                        <div className="flex justify-between">
+                            <span className='font-medium '>Devices</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
+                            <div className="bg-red-600 h-2.5 rounded-full" style={{ width: '80%' }}></div>
+                            <span className="text-gray-500 text-xs">8 dari 10 tersedia</span>
+                        </div>
                     </div>
 
-                    <div className="flex justify-between">
-                        <span className='font-medium'>Contacts</span>
-                        <span className="text-gray-500">5 dari 100</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
-                        <div className="bg-green-500 h-2.5 rounded-full" style={{ width: '5%' }}></div>
+
+
+                    <div className='flex flex-row gap-6 pt-5'>
+
+                        <div className="flex justify-between">
+                            <span className='font-medium'>Contacts</span>
+
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2.5">
+                            <div className="bg-green-500 h-2.5 rounded-full" style={{ width: '5%' }}></div>
+                            <span className="text-gray-500 text-xs">5 dari 100 tersedia</span>
+                        </div>
                     </div>
 
                 </div>

@@ -22,9 +22,9 @@ Sebelum mulai, pastikan Anda memiliki perangkat lunak berikut terinstal:
 
 **Project Masih dalam proses penyempurnaan dalam waktu 24 jam kedepan.**
 
-##Website Dapat Dioperasikan bagian Register, Login , Lupa Password.
+## Website Dapat Dioperasikan bagian Register, Login , Lupa Password.
 
-###Silahkan ikuti website yang sudah ter-deploy.
+### Silahkan ikuti website yang sudah ter-deploy.
 
 *Akses Website yang Telah Dideploy*
 Untuk memudahkan Anda mengakses website ini, saya sudah deploy ke Vercel. Anda dapat mengaksesnya melalui link berikut: [Website di Vercel](https://forwardin-jo1bqwo0j-lisgiyanto-sofiyans-projects.vercel.app/)

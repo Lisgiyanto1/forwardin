@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const NavbarMinimal: FC = () => {
     return (
-        <nav className="flex top-0 lg:left-0 justify-center lg:justify-start w-full lg:bg-gray-100  p-4 z-50">
+        <nav className="flex z-0 top-0 lg:left-0 justify-center lg:justify-start w-full lg:bg-gray-100  p-4">
             <div className="flex justify-between items-center">
                 <Link href="/">
                     <Image src="/icon.png" width={200} height={6} alt="Logo" className="h-9 sm:h-9" />

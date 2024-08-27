@@ -9,7 +9,7 @@ type LogoutModalProps = {
 export default function LogoutModal({ onConfirm, onCancel }: LogoutModalProps) {
   return (
     <div className="modal-overlay">
-      <div className="modal flex-col flex justify-center items-center">
+      <div className="modal z-50 flex-col flex justify-center items-center">
         <HelpCircle size={48} className="text-red-500 mb-4 " />
         <h2 className="text-xl font-semibold">Are you sure you want to logout?</h2>
         <div className="modal-actions mt-6">
