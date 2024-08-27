@@ -1,13 +1,17 @@
+import { useDarkMode } from '@/context/DarkMode';
 import React from 'react';
 
 const Paket: React.FC = () => {
+    const {isDarkMode} =  useDarkMode();
+    const dark = isDarkMode ?'bg-gray-900 text-white shadow-lg shadow-blue-500 ' : 'bg-white text-gray-900 ';
+    
     return (
-        <div className=" mx-auto  h-64   bg-white shadow-lg rounded-lg p-8 ">
+        <div className={`${dark} mx-auto  h-64   shadow-lg rounded-lg p-8 `}>
             <div className="flex justify-between items-center">
                 <div className='flex  flex-row justify-center gap-2 items-top'>
-                    <span className="text-gray-800 font-medium w-16">Paket saat ini</span>
-                    <h2 className="text-2xl font-extrabold "> Starter</h2>
-                    <span className='bg-gray-900  my-1 px-3 rounded-2xl text-white font-light text-center h-6 flex justify-center items-center'>free</span>
+                    <span className=" font-medium w-16">Paket saat ini</span>
+                    <h2 className={`text-2xl bg-clip-text text-transparent font-extrabold  ${isDarkMode ? 'bg-gradient-to-r from-blue-500 via-gray-100 to-blue-500 ' : 'bg-gradient-to-b from-blue-900 via-gray-900 to-blue-500'}`}> Starter</h2>
+                    <span className={` my-1 px-3 rounded-2xl  font-light text-center h-6 flex justify-center items-center ${isDarkMode? 'bg-green-400 text-gray-900 font-semibold  border-2 border-white': 'bg-gray-900 text-white '}`}>free</span>
 
                 </div>
                 <div>

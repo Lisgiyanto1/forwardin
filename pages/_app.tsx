@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { DarkModeProvider } from "@/context/DarkMode";
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const router = useRouter();
@@ -28,11 +29,11 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
 
   return (
     <>
-
       <SessionProvider session={session}>
-
         <RootLayout>
-          <Component {...pageProps} />
+          <DarkModeProvider>
+            <Component {...pageProps} />
+          </DarkModeProvider>
         </RootLayout>
       </SessionProvider>
     </>
