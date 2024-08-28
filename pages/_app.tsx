@@ -1,5 +1,6 @@
 import RootLayout from "@/components/layout";
 import "@/styles/globals.css";
+import "@/styles/Home.module.css"
 import "flowbite-react";
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";

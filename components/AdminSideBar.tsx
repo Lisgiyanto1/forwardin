@@ -82,7 +82,7 @@ export default function AdminSidebar({ children }: { children: ReactNode }) {
     };
 
     return (
-        <div className={`flex ${dark}`}>
+        <div className={`flex ${dark} `}>
             {/* Sidebar */}
             <aside className="w-52 h-screen   text-gray-950 text-sm">
                 <div className="p-4">
@@ -247,7 +247,7 @@ export default function AdminSidebar({ children }: { children: ReactNode }) {
 
 
             {/* Main Content */}
-            <main className="flex-1 p-4 ">
+            <main className="flex-1 p-4 overflow-y-auto h-screen">
                 {children}
             </main>
         </div>

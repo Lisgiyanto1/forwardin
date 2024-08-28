@@ -6,14 +6,15 @@ import { Calendar } from 'lucide-react'; // Import Calendar icon from Lucide
 import Paket from '@/components/content/paket';
 import PesanTrack from '@/components/content/pesantrack';
 import { useDarkMode } from '@/context/DarkMode';
+import Analitik from '@/components/content/analitik';
 
 const AdminHome = () => {
     const { data: session, status } = useSession();
     const [greeting, setGreeting] = useState<string>('');
     const [currentDate, setCurrentDate] = useState<string>('');
-    const {isDarkMode} =  useDarkMode();
+    const { isDarkMode } = useDarkMode();
+
     useEffect(() => {
-        // Set greeting based on time of day
         const currentHour = new Date().getHours();
         if (currentHour < 12) {
             setGreeting('Good morning');
@@ -23,7 +24,6 @@ const AdminHome = () => {
             setGreeting('Good evening');
         }
 
-        // Update the date and time every second
         const intervalId = setInterval(() => {
             const now = new Date();
             const options: Intl.DateTimeFormatOptions = {
@@ -39,7 +39,6 @@ const AdminHome = () => {
             setCurrentDate(now.toLocaleDateString('en-US', options));
         }, 1000);
 
-        // Cleanup the interval on component unmount
         return () => clearInterval(intervalId);
     }, []);
 
@@ -52,13 +51,13 @@ const AdminHome = () => {
     }
 
     const adminName = session?.user?.name || 'Admin';
-    
-    const dark = isDarkMode ?'bg-gray-800 text-white ' : 'bg-gray-300 text-gray-900';
+
+    const dark = isDarkMode ? 'bg-gray-800 text-white ' : 'bg-gray-300 text-gray-900';
     const textDark = isDarkMode ? 'text-gray-50' : 'text-gray-700';
+
     return (
-        
         <AdminSidebar>
-            <div className={`${dark} p-8 w-auto h-full rounded-2xl `}>
+            <div className={`${dark} p-8 w-full h-full rounded-2xl overflow-y-auto custom-scrollbar`}>
                 <p className="text-2xl font-bold pt-10">
                     {greeting}, {adminName}.
                 </p>
@@ -75,6 +74,9 @@ const AdminHome = () => {
                     <div className='pl-10'>
                         <PesanTrack />
                     </div>
+                </div>
+                <div className='w-auto h-auto mt-10'>
+                    <Analitik />
                 </div>
             </div>
         </AdminSidebar>
