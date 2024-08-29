@@ -7,6 +7,7 @@ import Paket from '@/components/content/paket';
 import PesanTrack from '@/components/content/pesantrack';
 import { useDarkMode } from '@/context/DarkMode';
 import Analitik from '@/components/content/analitik';
+import UnauthenticatedPage from './authenticated';
 
 const AdminHome = () => {
     const { data: session, status } = useSession();
@@ -47,7 +48,7 @@ const AdminHome = () => {
     }
 
     if (status === 'unauthenticated') {
-        return <p>You must be logged in to access the admin dashboard.</p>;
+        return <UnauthenticatedPage/>
     }
 
     const adminName = session?.user?.name || 'Admin';
