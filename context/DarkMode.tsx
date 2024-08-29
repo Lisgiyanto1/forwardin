@@ -20,6 +20,7 @@ export const DarkModeProvider = ({ children }: {children: ReactNode} ) => {
     const toggleDarkMode = ()=> {
         setIsDarkMode(prevMode => {
             const newMode = !prevMode;
+            localStorage.setItem('theme', newMode ? 'dark' : 'light');
             return newMode;
         });
     }

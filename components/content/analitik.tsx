@@ -21,7 +21,7 @@ const Analitik = () => {
     const toggleDropdown = () => setIsDropdownOpen((prevState) => !prevState);
     const dark = isDarkMode ? 'bg-gray-900 text-white shadow-lg shadow-blue-500 ' : 'bg-white text-gray-900 ';
     const typoDark = isDarkMode ? 'bg-gray-700 text-white shadow-lg shadow-blue-500 ' : 'border-2 border-gray-300 text-gray-900 ';
-
+    const compDark = isDarkMode? 'bg-gray-500 text-white ': 'bg-gray-300 text-gray-900';
     const data = {
         labels: ['Total Pesan Keluar', 'Total Pesan Gagal', 'Total Pesan Masuk'],
         datasets: [
@@ -44,6 +44,21 @@ const Analitik = () => {
             },
         },
     };
+    const dataPesan = {
+        pesan_terakhir: "24",
+        pesan_masuk: 7,
+        pesan_gagal: 0,
+        total_pesan : 23
+    };
+   
+
+    const Rata = () => {
+        const { pesan_masuk, pesan_gagal } = dataPesan;
+        var rata = ((pesan_masuk * pesan_masuk) - pesan_gagal) / pesan_masuk;
+        return rata;
+    }
+
+
     return (
         <>
             <div className={`${dark} w-full p-6 flex  flex-col gap-10  rounded-lg `}>
@@ -105,17 +120,18 @@ const Analitik = () => {
                             </div>
                         </div>
                         <div className="grid grid-cols-3 gap-4 text-center">
+
                             <div>
-                                <p className="text-sm font-semibold">Pesan Keluar</p>
-                                <p className="text-xl font-bold">24</p>
+                                <p className="text-sm font-semibold">Hari Ini</p>
+                                <p className="text-xl font-bold">{dataPesan.pesan_terakhir}</p>
                             </div>
                             <div>
                                 <p className="text-sm font-semibold">Pesan Masuk</p>
-                                <p className="text-xl font-bold">7</p>
+                                <p className="text-xl font-bold">{dataPesan.pesan_masuk}</p>
                             </div>
                             <div>
                                 <p className="text-sm font-semibold">Pesan Gagal</p>
-                                <p className="text-xl font-bold">0</p>
+                                <p className="text-xl font-bold">{dataPesan.pesan_gagal}</p>
                             </div>
                         </div>
                     </div>
@@ -154,12 +170,30 @@ const Analitik = () => {
 
                 </div>
                 {/* Grafik Guys */}
-                <div className="p-4 bg-gray-50 rounded-lg shadow">
+                <div className={`p-4  rounded-lg shadow ${typoDark}`}>
                     <h3 className="text-md font-semibold mb-4">Grafik chart perjam</h3>
+                    <div className="flex flex-row gap-5 w-2/3 mb-4">
+                        <div className={`w-full h-auto flex-col flex  py-2 px-2 rounded-lg ${compDark}`}>
+                            <p className="text-sm ">Hari Ini</p>
+                            <p className="text-base font-semibold">{dataPesan.pesan_terakhir}</p>
+                        </div>
+                        <div className={`w-full h-auto flex-col flex py-2 px-2 rounded-lg ${compDark}`}>
+                            <p className="text-sm ">Rata-rata Harian</p>
+                            <p className="text-base font-semibold">{dataPesan.pesan_terakhir}</p>
+                        </div>
+                        <div className={`w-full h-auto flex-col flex py-2 px-2 rounded-lg ${compDark}`}>
+                            <p className="text-sm ">Bulan Ini</p>
+                            <p className="text-base font-semibold">{dataPesan.total_pesan}</p>
+                        </div>
+                        <div className={`w-full h-auto flex-col flex py-2 px-2 rounded-lg ${compDark}`}>
+                            <p className="text-sm ">Rata - rata Waktu</p>
+                            <p className="text-base font-semibold">{Rata()}</p>
+                        </div>
+                    </div>
                     <GrafikChart />
                 </div>
                 {/* Trend Grafik Guys */}
-                <div className="p-4 bg-gray-50 rounded-lg shadow">
+                <div className={`p-4  rounded-lg shadow ${typoDark}`}>
                     <h3 className="text-md font-semibold mb-4">Trend Interaksi Pesan</h3>
                     <TrendChart />
                 </div>
