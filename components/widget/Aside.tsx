@@ -5,7 +5,7 @@ interface AsideProps {
 }
 
 export default function Aside({ onSelectPage }: AsideProps) {
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("GetStarted");
 
   const handleClick = (sectionId: string) => {
     setActiveLink(sectionId);

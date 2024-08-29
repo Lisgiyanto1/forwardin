@@ -25,6 +25,55 @@
     border-top-left-radius: 150px;
 
 }
+.mb-16 {
+    margin-bottom: 4rem /* 64px */;
+}
+@media (min-width: 1024px) {
+    .lg\:top-20 {
+        top: 5rem /* 80px */;
+    }
+}
+@media (min-width: 1024px) {
+    .lg\:w-full {
+        width: 100%;
+    }
+}
+@media (min-width: 1024px) {
+    .lg\:pb-72 {
+        padding-bottom: 18rem /* 288px */;
+    }
+}
+.pb-52 {
+    padding-bottom: 13rem /* 208px */;
+}
+.pb-44 {
+    padding-bottom: 11rem /* 176px */;
+}
+.pb-36 {
+    padding-bottom: 9rem /* 144px */;
+}
+.pr-28 {
+    padding-right: 7rem /* 112px */;
+}
+.pb-72 {
+    padding-bottom: 18rem /* 288px */;
+}
+.pb-80 {
+    padding-bottom: 20rem /* 320px */;
+}
+.mb-56 {
+    margin-bottom: 14rem /* 224px */;
+}
+
+.z-30 {
+    z-index: 30;
+}
+.left-36 {
+    left: 9rem /* 144px */;
+}
+.top-20 {
+    top: 5rem /* 80px */;
+}
 .mb-12 {
     margin-bottom: 3rem /* 48px */;
 }

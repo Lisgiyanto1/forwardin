@@ -12,7 +12,7 @@ export default function LogoutModal({ onConfirm, onCancel }: LogoutModalProps) {
    const dark = isDarkMode ? 'bg-gray-900 text-white shadow-lg shadow-blue-500 ' : 'bg-white text-gray-900 ';
   const typoDark = isDarkMode ? 'text-gray-900  shadow-lg shadow-blue-500 ' : 'border-2 border-gray-300 text-gray-900 ';
   return (
-    <div className={`modal-overlay `}>
+    <div className={`modal-overlay z-50 `}>
       <div className={`modal z-50 flex-col flex justify-center items-center ${typoDark}`}>
         <HelpCircle size={48} className="text-red-500 mb-4 " />
         <h2 className="text-xl font-semibold">Are you sure you want to logout?</h2>

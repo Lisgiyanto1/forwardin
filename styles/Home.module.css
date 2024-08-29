@@ -1,13 +1,20 @@
-.custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 0, 0, 0.5);
-    border-radius: 20px;
-    
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(100, 100, 100, 0.7);
-}
+.container {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  
+  .topImage {
+    position: relative;
+    transform: translate(20px, -20px); /* Menggeser gambar atas sedikit */
+    z-index: 1;
+  }
+  
