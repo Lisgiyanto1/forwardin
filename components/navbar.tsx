@@ -24,16 +24,16 @@ export default function CustomNavbar() {
     const [featuresDropdownOpen, setFeaturesDropdownOpen] = useState(false);
     const [activeLink, setActiveLink] = useState<string>("");
 
-    // Toggle Features Dropdown
+
     const toggleFeaturesDropdown = () => {
         setFeaturesDropdownOpen((prevState) => !prevState);
         setActiveLink("Features");
     };
 
-    // Handle menu item click and set active link
+
     const handleItemClick = (section: string) => {
         setActiveLink(section);
-        setFeaturesDropdownOpen(false); // Close dropdown after clicking
+        setFeaturesDropdownOpen(false);
     };
 
     useEffect(() => {
@@ -97,12 +97,10 @@ export default function CustomNavbar() {
                             onClick={() => setMenuOpen(!menuOpen)}
                         >
                             {menuOpen ? (
-                                // Icon close (X)
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             ) : (
-                                // Icon hamburger
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                                 </svg>
@@ -275,7 +273,7 @@ export default function CustomNavbar() {
                                     )}
                                 </div>
                             )}
-                            {/* Logout button for authenticated users */}
+                           
                             {status === 'authenticated' && (
                                 <Button
                                     gradientDuoTone="cyanToBlue"
