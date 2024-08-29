@@ -38,23 +38,23 @@ export default function GetStarted() {
         </section>
 
 
-        <section id="Broadcast" className="min-h-screen bg-gray-100 mb-16">
+        <section id="Broadcast" className="min-h-screen bg-gray-100 mb-0">
           <Broadcast />
         </section>
 
-        <section id="Campaign" className="min-h-screen bg-gray-100 mb-16">
+        <section id="Campaign" className="min-h-screen bg-gray-100 mb-0">
           <Campaign />
         </section>
 
-        <section id="Auto" className="min-h-screen bg-gray-100 mb-16">
+        <section id="Auto" className="min-h-screen bg-gray-100 mb-0">
           <Auto />
         </section>
 
-        <section id="Opportunity" className="min-h-screen bg-gray-100 mb-16">
+        <section id="Opportunity" className="min-h-screen bg-gray-100 mb-0 pt-20 pb-16">
           <Opportunity />
         </section>
 
-        <section id="Pricing" className="min-h-screen bg-gray-100 mb-16">
+        <section id="Pricing" className="min-h-screen bg-gray-100 mb-0">
           <Pricing />
         </section>
 
