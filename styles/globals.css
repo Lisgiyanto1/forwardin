@@ -25,6 +25,9 @@
     border-top-left-radius: 150px;
 
 }
+.hover\:rounded-xl:hover {
+    border-radius: 0.75rem /* 12px */;
+}
 .hover\:duration-0:hover {
     transition-duration: 0s;
 }
