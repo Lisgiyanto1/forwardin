@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import SignIn from '@/components/SignIn';
 import SignUp from '@/components/SignUp';
-import ForgotPassword from '@/components/ForgotPassword'; // Import ForgotPassword component
+import ForgotPassword from '@/components/ForgotPassword';
 import WelcomeText from '@/components/WelcomeText';
 import { useState, useEffect } from 'react';
 
@@ -10,7 +10,7 @@ export default function SignInPage() {
   const [currentPage, setCurrentPage] = useState<'signIn' | 'signUp' | 'forgotPassword'>('signIn');
 
   useEffect(() => {
-    // Determine the current page based on the route
+
     if (router.pathname === '/signup') {
       setCurrentPage('signUp');
     } else if (router.pathname === '/forgot-password') {
@@ -37,50 +37,50 @@ export default function SignInPage() {
 
   return (
 
-  <div className="flex flex-row lg:bg-gray-100 h-auto ">
-    <div className="hidden pl-36 pb-10  justify-center lg:flex w-full ">
-      <WelcomeText />
-    </div>
-    <div className=" flex flex-col w-full justify-center ">
-      {currentPage === 'signIn' && <SignIn />}
-      {currentPage === 'signUp' && <SignUp isInSignInPage={true} />}
-      {currentPage === 'forgotPassword' && <ForgotPassword />}
+    <div className="flex flex-row lg:bg-gray-100 h-auto ">
+      <div className="hidden pl-36 pb-10  justify-center lg:flex w-full ">
+        <WelcomeText />
+      </div>
+      <div className=" flex flex-col w-full justify-center ">
+        {currentPage === 'signIn' && <SignIn />}
+        {currentPage === 'signUp' && <SignUp isInSignInPage={true} />}
+        {currentPage === 'forgotPassword' && <ForgotPassword />}
 
-      <div className="mt-4 text-center">
-        {currentPage === 'signIn' && (
-          <>
+        <div className="mt-4 text-center">
+          {currentPage === 'signIn' && (
+            <>
+              <p>
+                Butuh Buat Akun?{' '}
+                <button onClick={handleSwitchToSignUp} className="text-blue-500 hover:underline">
+                  Daftar di sini
+                </button>
+              </p>
+              <p>
+                <button onClick={handleForgotPassword} className="text-blue-500 hover:underline">
+                  Lupa Password?
+                </button>
+              </p>
+            </>
+          )}
+          {currentPage === 'signUp' && (
             <p>
-              Butuh Buat Akun?{' '}
-              <button onClick={handleSwitchToSignUp} className="text-blue-500 hover:underline">
-                Daftar di sini
+              Sudah punya akun?{' '}
+              <button onClick={handleSwitchToSignIn} className="text-blue-500 hover:underline">
+                Masuk di sini
               </button>
             </p>
+          )}
+          {currentPage === 'forgotPassword' && (
             <p>
-              <button onClick={handleForgotPassword} className="text-blue-500 hover:underline">
-                Lupa Password?
+              Ingin Password?{' '}
+              <button onClick={handleSwitchToSignIn} className="text-blue-500 hover:underline">
+                Masuk di sini
               </button>
             </p>
-          </>
-        )}
-        {currentPage === 'signUp' && (
-          <p>
-            Sudah punya akun?{' '}
-            <button onClick={handleSwitchToSignIn} className="text-blue-500 hover:underline">
-              Masuk di sini
-            </button>
-          </p>
-        )}
-        {currentPage === 'forgotPassword' && (
-          <p>
-            Ingin Password?{' '}
-            <button onClick={handleSwitchToSignIn} className="text-blue-500 hover:underline">
-              Masuk di sini
-            </button>
-          </p>
-        )}
+          )}
+        </div>
       </div>
     </div>
-  </div>
 
 
   );

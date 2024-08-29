@@ -25,7 +25,19 @@
     border-top-left-radius: 150px;
 
 }
+.mb-12 {
+    margin-bottom: 3rem /* 48px */;
+}
+.mb-11 {
+    margin-bottom: 2.75rem /* 44px */;
+}
+.mt-11 {
+    margin-top: 2.75rem /* 44px */;
+}
 
+.hover\:font-semibold:hover {
+    font-weight: 600;
+}
 
 @media (min-width: 768px) {
     .md\:ml-36 {
