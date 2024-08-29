@@ -25,6 +25,9 @@
     border-top-left-radius: 150px;
 
 }
+.hover\:duration-0:hover {
+    transition-duration: 0s;
+}
 .mb-16 {
     margin-bottom: 4rem /* 64px */;
 }

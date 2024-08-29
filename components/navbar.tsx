@@ -242,7 +242,7 @@ export default function CustomNavbar() {
 
                             {/* Sign In button with dropdown */}
                             {status !== 'authenticated' && (
-                                <div className="relative">
+                                <div className="relative flex flex-col  justify-center items-center">
                                     <Button
                                         className="bg-blue-600 hover:bg-blue-800 text-white px-5 py-2 w-60 rounded-lg"
                                         onClick={() => setShowSignInDropdown(!showSignInDropdown)}
@@ -255,7 +255,7 @@ export default function CustomNavbar() {
                                         )}
                                     </Button>
                                     {showSignInDropdown && (
-                                        <div className="flex justify-center items-center right-0 mt-2 bg-white bg-opacity-50 rounded-lg shadow-md py-4 backdrop-filter backdrop-blur-sm w-64">
+                                        <div className="flex justify-center items-center right-0 mt-2 bg-white bg-opacity-50 rounded-lg shadow-md py-4 backdrop-filter backdrop-blur-sm w-60">
                                             <div className="flex flex-col justify-center">
                                                 <Button
                                                     className="bg-blue-300 hover:bg-blue-500 text-white px-2 py-2 rounded-lg w-56"
