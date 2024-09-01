@@ -48,14 +48,14 @@ export default function Home() {
           content="Next.js, Web Development, React, SEO, JavaScript"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Welcome to My Next.js App" />
+        <meta property="og:title" content="Forwardin" />
         <meta
           property="og:description"
-          content="Explore a world of web development resources and tutorials on Next.js."
+          content=""
         />
-        <meta property="og:image" content="/next-og-image.png" />
-        <meta property="og:url" content="https://your-domain.com" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="/icon.png" />
+        <meta property="og:url" content="https://forwardin.vercel.app" />
+        <link rel="icon" href="/logo_forwardin.ico" />
       </Head>
 
       <main className="h-screen w-screen">

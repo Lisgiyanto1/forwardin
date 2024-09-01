@@ -3,13 +3,10 @@ import { motion, MotionValue } from "framer-motion";
 import Image from 'next/image';
 
 interface BroadcastProps {
-    imageLeftOpacity: MotionValue<number>;
-    imageLeftTranslateX: MotionValue<number>;
-    imageRightOpacity: MotionValue<number>;
-    imageRightTranslateX: MotionValue<number>;
+    bounceScale: MotionValue<number>;
 }
 
-export default function Broadcast({ imageLeftOpacity, imageLeftTranslateX, imageRightOpacity, imageRightTranslateX }: BroadcastProps) {
+export default function Broadcast({ bounceScale }: BroadcastProps) {
     return (
         <motion.div
             className="h-screen z-0 w-screen bg-gradient-to-b from-transparent to bg-gray-100 bg-cover bg-center overflow-hidden"
@@ -21,8 +18,7 @@ export default function Broadcast({ imageLeftOpacity, imageLeftTranslateX, image
                     <motion.div
                         className="w-full lg:w-1/2"
                         style={{
-                            opacity: imageLeftOpacity,
-                            x: imageLeftTranslateX,
+                            scale: bounceScale,
                         }}
                     >
                         <Image
@@ -38,8 +34,7 @@ export default function Broadcast({ imageLeftOpacity, imageLeftTranslateX, image
                     <motion.div
                         className="w-full lg:w-1/2"
                         style={{
-                            opacity: imageRightOpacity,
-                            x: imageRightTranslateX,
+                            scale: bounceScale,
                         }}
                     >
                         <div className="w-full lg:w-2/3 ml-5 lg:mr-10">
@@ -54,9 +49,6 @@ export default function Broadcast({ imageLeftOpacity, imageLeftTranslateX, image
                         </div>
 
                     </motion.div>
-
-                    {/* Text Section */}
-
                 </div>
             </div>
         </motion.div>

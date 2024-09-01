@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Aside from './Aside';
 import WelcomeGet from './WelcomeGet';
 import Broadcast from './BroadCast';
@@ -27,20 +27,35 @@ export default function GetStarted() {
   const textOpacity = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
   const textTranslateX = useTransform(scrollYProgress, [0.1, 0.2], [100, 0]);
 
-  // Animasi untuk gambar muncul dari kiri
-  const imageLeftOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-  const imageLeftTranslateX = useTransform(scrollYProgress, [0, 0.3], [-100, 0]);
+  const bounceScale = useSpring(useTransform(scrollYProgress, [0, 0.2, 1], [0.9, 1, 0]), {
+   
+    stiffness: 300,
+    damping: 15,
+  });
 
-  // Animasi untuk gambar muncul dari kanan
-  const imageRightOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-  const imageRightTranslateX = useTransform(scrollYProgress, [0, 0.3], [100, 0]);
+  const bounceY = useSpring(
+    useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 1, 0]), // Bounce effect
+    {
+      stiffness: 300,
+      damping: 15,
+    }
+  );
+
+  const bounceScaleCampaign = useSpring(
+    useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0]), 
+    {
+      stiffness: 300,
+      damping: 15,
+    }
+  );
+
 
   // Animations for WelcomeGet component
   const welcomeX = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
   const welcomeOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const welcomeBlur = useTransform(scrollYProgress, [0, 0.2], ['0px', '10px']);
 
-  // Campaign
+  // Campaign section animations
   const imageY = useTransform(scrollYProgress, [0.3, 0.5], [0, -300]); 
   const textY = useTransform(scrollYProgress, [0.3, 0.5], [0, 300]);  
   const opacity = useTransform(scrollYProgress, [0.3, 0.5], [1, 0]);  
@@ -56,37 +71,28 @@ export default function GetStarted() {
         <Aside onSelectPage={handleScroll} />
       </div>
       <div className="w-full h-full flex-1 overflow-auto">
-        <motion.div
+      <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           <section id="GetStarted" className="min-h-screen bg-gray-100 bg-cover bg-center" style={{ backgroundImage: `url('/background.png')` }}>
-            <WelcomeGet x={welcomeX} opacity={welcomeOpacity} blur={welcomeBlur} />
+          <WelcomeGet bounceScale={bounceScale} />
           </section>
 
           <section id="Broadcast" className="min-h-screen bg-gray-100 mb-0">
             <Broadcast
-              imageLeftOpacity={imageLeftOpacity}
-              imageLeftTranslateX={imageLeftTranslateX}
-              imageRightOpacity={imageRightOpacity}
-              imageRightTranslateX={imageRightTranslateX}
+              bounceScale={bounceScale}
             />
           </section>
-
           <section id="Campaign" className="min-h-screen bg-gray-100 mb-0">
             <Campaign 
-              imageY={imageY}
-              textY={textY}
-              opacity={opacity}
-              imageYOut={imageYOut}
-              textYOut={textYOut}
-              opacityOut={opacityOut}
+              bounceScale={bounceScaleCampaign}
             />
           </section>
 
           <section id="Auto" className="min-h-screen bg-gray-100 mb-0">
-            <Auto />
+            <Auto bounceY={bounceY} />
           </section>
 
           <section id="Opportunity" className="min-h-screen bg-gray-100 mb-0 pt-20 pb-16">
@@ -97,7 +103,7 @@ export default function GetStarted() {
             <Pricing />
           </section>
 
-          <section id="CombinedPage" className="relative -z-10 min-h-screen bg-blue-600 mb-16 overflow-hidden">
+          <section id="CombinedPage" className="relative min-h-screen bg-blue-600 mb-16 overflow-hidden">
             <div className="absolute inset-0 bg-cover bg-bottom" style={{ backgroundImage: `url('/background2.png')` }}>
             </div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full">

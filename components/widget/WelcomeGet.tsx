@@ -6,12 +6,10 @@ import { useRouter } from "next/router";
 import { motion, MotionValue } from "framer-motion";
 
 interface WelcomeGetProps {
-  x: MotionValue<number>;
-  opacity: MotionValue<number>;
-  blur: MotionValue<string>;
+  bounceScale: MotionValue<number>;
 }
 
-export default function WelcomeGet({ x, opacity, blur }: WelcomeGetProps) {
+export default function WelcomeGet({ bounceScale }: WelcomeGetProps) {
   const router = useRouter();
 
   const handleGet = () => {
@@ -24,7 +22,7 @@ export default function WelcomeGet({ x, opacity, blur }: WelcomeGetProps) {
       style={{ backgroundImage: `url('/background.png')`, margin: '0', padding: '0' }}
     >
       <motion.div
-        style={{ x, opacity, filter: `blur(${blur})` }}
+        style={{ scale: bounceScale }}
         className="flex items-center justify-center h-auto pb-20"
       >
         <div className="w-full lg:ml-44 pt-44 lg:pt-0 lg:w-10/12 flex flex-col lg:flex-row justify-between items-center lg:items-start">

@@ -1,37 +1,21 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, MotionValue, useSpring, useTransform } from 'framer-motion';
 
 interface CampaignProps {
-  imageY: any;
-  textY: any;
-  opacity: any;
-  imageYOut: any;
-  textYOut: any;
-  opacityOut: any;
+  bounceScale: MotionValue<number>;
 }
 
-export default function Campaign({
-  imageY,
-  textY,
-  opacity,
-  imageYOut,
-  textYOut,
-  opacityOut,
-}: CampaignProps) {
+export default function Campaign({ bounceScale }: CampaignProps) {
+ 
   return (
     <div className="h-screen w-screen bg-cover bg-center overflow-hidden bg-white">
       <div className="flex items-center justify-center h-full">
         <div className="w-full lg:ml-44 lg:pt-0 lg:w-10/12 flex flex-col lg:flex-row justify-between items-center lg:items-start">
-          
-          {/* Image Section */}
+    
           <motion.div
-            style={{ y: imageY, opacity }}
-            initial={{ y: 0, opacity: 1 }}  
-            animate={{ y: 0, opacity: 1 }}  
-            exit={{ y: imageYOut, opacity: opacityOut }} 
-            transition={{ duration: 0.5 }}
+            style={{ scale: bounceScale }}
             className="w-full lg:w-full lg:order-1"
           >
             <Image
@@ -45,11 +29,9 @@ export default function Campaign({
 
           {/* Text Section */}
           <motion.div
-            style={{ y: textY, opacity }}
-            initial={{ y: 0, opacity: 1 }} 
-            animate={{ y: 0, opacity: 1 }}   
-            exit={{ y: textYOut, opacity: opacityOut }} 
-            transition={{ duration: 0.5 }}
+           style={{ scale: bounceScale }}
+           
+           
             className="w-full lg:w-2/3"
           >
             <div className="flex flex-col w-full px-4">
