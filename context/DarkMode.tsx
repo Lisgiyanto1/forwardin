@@ -1,13 +1,12 @@
-import { error } from "console";
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
 
-interface DarkConntextProps {
+interface DarkContextProps {
     isDarkMode : boolean;
     toggleDarkMode: () => void ;
 }
 
-const DarkModeContext = createContext<DarkConntextProps | undefined>(undefined);
+const DarkModeContext = createContext<DarkContextProps | undefined>(undefined);
 
 export const DarkModeProvider = ({ children }: {children: ReactNode} ) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
