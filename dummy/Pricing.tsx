@@ -28,7 +28,7 @@ export const pricingPlans = [
       {
         name: "Contacts",
         value: "50",
-        icon: <Users className="w-5 h-5 inline-block mr-2 text-blue-500" />
+        icon: <Users className="w-5 h-5 inline-block  mr-2 text-blue-500" />
       },
       {
         name: "Excel / CSV Contact Import",

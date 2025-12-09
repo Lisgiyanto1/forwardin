@@ -11,7 +11,7 @@ interface PricingProps {
 export default function Pricing({ motionEffect }: PricingProps) {
     const { ref, inView } = useInView({
         threshold: 0.1,
-        triggerOnce: false, // Ensure it triggers multiple times
+        triggerOnce: false,
     });
 
     return (
